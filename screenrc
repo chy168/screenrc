@@ -1,0 +1,97 @@
+# C-a :source .screenrc
+termcapinfo xterm* ti@:te@
+# Turn off screen startup mesg
+startup_message off
+# Set encoding utf8
+defutf8 on
+# Turn off the be~be~ sound instaed of blank screen
+vbell off
+
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+autodetach on
+
+# Create new screen
+bindkey ^N screen
+# Change now screen title
+bindkey ^T title
+# split window, Alt+x
+bindkey ^[x split
+# Refresh display when exit program
+altscreen on
+# Dynamic title
+shelltitle "$ |bash"
+
+##### Key Bind Here ! #####
+
+## Switch different window ##
+# screen IN putty, Ctrl+*
+bindkey "^[[C" next
+bindkey "^[[D" prev
+bindkey "^[[A" focus up
+bindkey "^[[B" focus down
+
+# screen IN gnome-terminal, Ctrl+*
+bindkey "^[[1;5C" next
+bindkey "^[[1;5D" prev
+bindkey "^[[1;5A" prev
+bindkey "^[[1;5B" prev
+
+# Remove the split window
+bindkey ^R remove
+# Kill the window
+bindkey ^K kill
+# No split window, just Only one window
+bindkey ^O only
+
+
+
+defscrollback 30000
+#nonblock on
+
+
+#escape ``
+#escape `e
+#escape ^Bb
+
+# BIND ESCAPE TO F11!
+# bindkey -k F1 command
+
+#hardstatus alwayslastline                                                                                                                          
+#hardstatus alwaysfirstline                                                                                                                          
+#hardstatus string '%{= mK}%-Lw%{= KW}%50>%n%f* %t%{= mK}%+Lw%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
+#hardstatus string '%{= kw}[ %{= kb}%H%{= kw} ][ %= %{= kw}%?%-Lw%?%{= kr}(%{= kW}%n*%f %t%?(%u)%?%{= kr})%{= kw}%?%+Lw%?%?%= %{w} ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+
+bind 'R' screen /home/chy168/ssh_list.sh
+#bind 'R' screen -t sunfire16 ssh s1554463@sunfire16
+#bind 'q' quit
+
+
+#bindkey ^[- resize -1
+#bindkey ^[= resize +1
+
+#bindkey "^[A" focus up
+#bindkey "^[B" focus down
+#bindkey "^[C" next
+#bindkey "^[D" prev
+#bindkey "^[OA" focus up
+#bindkey "^[OB" focus down
+#bindkey "^[OC" next
+#bindkey "^[OD" prev
+
+#putty usable
+#bindkey "^[^[[D" prev
+#bindkey "^[^[[C" next
+#bindkey ^[[1;5A focus up
+#bindkey ^[[1;5B focus down
+#bindkey ^[[1;5C next
+#bindkey ^[[1;5D prev
+
+#screen -t sunfire01 0
+#screen -t sunfire16 2 ssh s1554463@sunfire16
+#screen -t sunfire16 1 ssh s1554463@sunfire16
+
+
+#caption string 'GG%{= kw}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{= kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+caption always '%{= bk}[ %{= kb}%H%{= kw} ][%= %{= kw}%?%-Lw%?%{= kW}%n*%f %t%?%?%{= kw}%?%+Lw%?%?%= ][ %{r}%l%{w} ]%{w}[%{r} %d/%m/%y %C %A %{w}]%{w}'
+#caption always "ZZ%{= bk} %{= bY} [%n]%t @ %H %{-} %= %{= bR} %l %{-} | %{= KG} %Y-%m-%d %{-} "
+#hardstatus alwayslastline " %-Lw%{= Bw}%n%f %t%{-}%+Lw %=| %0c:%s "
