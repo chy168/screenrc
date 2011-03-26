@@ -1,0 +1,19 @@
+
+DESCRIPTION
+
+A useful utility to login terminal by ssh with screen.
+The example host file (ssh_host.txt.example) structured like the hosts file.
+More screen setting is described in .screenrc.
+
+
+INSTALLATION
+
+SCREEN CONFIGURATION FILE 
+
+[.screenrc]
+$ln -s PATH_WHAT_THIS_GIT_PUT/screen ~/.screenrc
+
+[SSH dealog box]
+This is a script to read ssh_host.txt and parsed as a dialog input parameter.
+$ln -s PATH_WHAT_THIS_GIT_PUT/ssh_list.sh ~/ssh_list.sh
+
