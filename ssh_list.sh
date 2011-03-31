@@ -20,7 +20,7 @@ dialog --ascii-lines --menu "Zz SSH Connection Tool" 30 50 30 ${MENU_ITEMS} 2> $
 CHOOSE=`cat ${TMP_FILE}`
 
 #Set terminal name (work in screen)
-echo -e "\033k${LIST[$CHOOSE]}\033\\"
-ssh -l zz_chen ${LIST[$CHOOSE]}
+#Put the echo behind the ssh avoding the ssh failed but change screen title
+ssh -l zz_chen ${LIST[$CHOOSE]} && echo -e "\033k${LIST[$CHOOSE]}\033\\"
 
 
